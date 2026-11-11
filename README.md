@@ -1,11 +1,13 @@
 # Neural Network from Scratch
 
-An N-layer feed-forward neural network written from scratch in Java, with no ML libraries. It trains with backpropagation and steepest (gradient) descent, and can also run inference on its own. Everything is controlled by a plain-text configuration file.
+An N-layer feed-forward neural network written from scratch in Java, with no ML libraries. The network trains with backpropagation and steepest (gradient) descent, and can also run inference on its own. All parameters are controlled by a text configuration file.
+
+**Author**: Linda Zeng
 
 ## Features
 
 - **Any number of layers and nodes.** The architecture comes from the config file, for example `nActivations=2,7,15,8,3` gives 2 inputs, three hidden layers and 3 outputs.
-- **Activation functions.** Sigmoid is the default. Hyperbolic tangent (tanh) is also implemented and can be switched in through `activationFunc` / `activationFuncDeriv`.
+- **Activation functions.** Sigmoid is the default. Hyperbolic tangent (tanh) is also implemented and can be manually switched in through `activationFunc` / `activationFuncDeriv`.
 - **Training and inference are separate.** With `trainMode=true` the network trains and then runs on the test cases. With `trainMode=false` it only runs inference.
 - **Input and truth tables.** Inputs and the expected outputs are read from text files (`input_table.txt`, `truth_table.txt`) or filled in manually.
 - **Weight initialization.** Weights can be fixed, random within `[minRand, maxRand)`, or loaded from a binary file. Trained weights can be saved to a binary file and reused later.
@@ -68,10 +70,10 @@ Outputs:
 
 Because the weights start random, the iteration count and exact outputs change from run to run.
 
-Then `java NeuralNetwork test_cases/configurationLoad.txt` loads those saved weights. **Run `configurationSave.txt` first**, because the load config needs the `saved-N-layer.bin` file it creates.
+Then `java NeuralNetwork test_cases/configurationLoad.txt` loads those saved weights and you can run inference on the model you trained. **Run `configurationSave.txt` first**, because the load config needs the `saved-N-layer.bin` file it creates.
 
-The other configs in `test_cases/` cover single-output XOR (`configurationAB1.txt`), a larger 2-100-5-3 network (`configurationABCD*.txt`). Note that `configurationABC.txt` currently exits with an error, because its `nActivations` lists 4 layer sizes but `nLayers=2` needs 3.
+The other configs in `test_cases/` cover single-output XOR (`configurationAB1.txt`), a larger 2-100-5-3 network (`configurationABCD*.txt`), etc.
 
 ## Image data (not included)
 
-The same network was also trained on image data (images converted to activation arrays). `configuration.txt`, `configuration_test.txt` and `configuration_test_train.txt` are the configs for that. The processed image files (`images*.bin`) and the image-preprocessing code aren't in this repo because of their size, so **those three configs won't run as-is**. The `test_cases/` configs run on their own.
+The same network was also trained on image data (images converted to activation arrays). `configuration.txt`, `configuration_test.txt` and `configuration_test_train.txt` are the configs for that. The processed image files (`images*.bin`) and the image-preprocessing code aren't in this repo because of their size, so those three configs won't run as-is. The `test_cases/` configs run on their own.
