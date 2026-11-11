@@ -1,0 +1,28 @@
+# Compiled Java
+*.class
+
+# macOS
+.DS_Store
+
+# Large files (GitHub rejects files over 100 MB; the image data bloats the repo)
+NeuralNetwork.zip
+images*.bin
+
+# past projects
+past_projects/
+ABC-backprop-checkoff/
+ABCD-backprop-checkoff/
+
+# other
+checklist.txt
+successful.txt
+configuration_old.txt
+*.zip
+
+ImageProcessing/
+
+BMP2OneByte.*
+RgbQuad.*
+Bytes2Activations.*
+
+saved-N-layer.bin 

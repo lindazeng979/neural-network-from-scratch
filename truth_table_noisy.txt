@@ -1,0 +1,21 @@
+# This file defines the truth table used for A-B-C backpropagation.
+# Each line follows the format key=value, where both key and value are read as strings.
+# Values may contain spaces, and arrays are comma-separated with no spaces.
+# Keys correspond to variable names. Indices (e.g., ".0") represent the index of the test case.
+# Comments must appear on their own lines and begin with "#".
+
+numCases=12
+nOutputs=3
+truthTableName=AND OR XOR
+truthTable.0=0.0,0.0,0.0
+truthTable.1=0.0,1.0,1.0
+truthTable.2=0.0,1.0,1.0
+truthTable.3=1.0,1.0,0.0
+truthTable.4=0.0,0.0,0.0
+truthTable.5=0.0,1.0,1.0
+truthTable.6=0.0,1.0,1.0
+truthTable.7=1.0,1.0,0.0
+truthTable.8=0.0,0.0,0.0
+truthTable.9=0.0,1.0,1.0
+truthTable.10=0.0,1.0,1.0
+truthTable.11=1.0,1.0,0.0

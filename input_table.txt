@@ -1,0 +1,12 @@
+# This file defines the input table used for A-B-C backpropagation.
+# Each line follows the format key=value, where both key and value are read as strings.
+# Values may contain spaces, and arrays are comma-separated with no spaces.
+# Keys correspond to variable names. Indices (e.g., ".0") represent the index of the test case.
+# Comments must appear on their own lines and begin with "#".
+
+numCases=4
+nInputs=2
+inputTable.0=0.0,0.0
+inputTable.1=0.0,1.0
+inputTable.2=1.0,0.0
+inputTable.3=1.0,1.0

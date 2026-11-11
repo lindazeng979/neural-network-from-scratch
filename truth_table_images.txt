@@ -1,0 +1,8 @@
+numCases=5
+nOutputs=5
+truthTableName=IMAGES
+truthTable.0=1.0,0.0,0.0,0.0,0.0
+truthTable.1=0.0,1.0,0.0,0.0,0.0
+truthTable.2=0.0,0.0,1.0,0.0,0.0
+truthTable.3=0.0,0.0,0.0,1.0,0.0
+truthTable.4=0.0,0.0,0.0,0.0,1.0

@@ -1,0 +1,53 @@
+# THE FIRST FEW TESTS FOR A-B-C-D with backpropagation.
+# Lines are in the format key=value, where both key and value are read in as strings. Spaces are allowed in the values.
+# Keys correspond to the name of the variable they contain the value for.
+# Comments can be made using # on a different line from key=value lines.
+
+############################################################
+# NETWORK CONFIGURATION
+############################################################
+nLayers=3
+nActivations=85200,30,12,5
+
+############################################################
+# INPUT AND TRUTH TABLE SETTINGS
+############################################################
+haveTruthTable=true
+                            # truthTableName takes on either "AND OR XOR" or "AND" for testing purposes
+truthTableName=IMAGES
+numCases=25
+printInputTable=false
+printTruthTable=true
+                            # typeInputInit takes on "loaded" or "manual" or "binary"
+typeInputInit=binary
+                            # inputSizeTest is only used if typeInputInit is "manual" and determines if number of inputs equals 2 (false) or 3 (true) 
+inputSizeTest=false
+                            # inputFileName is only used if typeInputInit is "loaded" or "binary" in which case it is a folder directory
+inputFileName=/Users/lindazeng/Downloads/NeuralNetworkImages/NNactivations/resized/train
+                            # typeTruthInit takes on "loaded" or "manual"
+typeTruthInit=loaded
+                            # truthFileName is only used if typeTruthInit is "loaded"
+truthFileName=truth_table_images_train.txt
+
+
+############################################################
+# TRAINING AND WEIGHT PREFERENCES
+############################################################
+trainMode=false
+                            # typeWeightInit takes on "fixed", "random", or "loaded from file" as its value
+typeWeightInit=loaded
+weightSaving=false
+                            # These names are only used if typeWeightInit is set to "loaded from file" and/or if weightSaving is set to true
+loadFileName=images8.bin
+saveFileName=na.bin
+
+
+############################################################
+# RUNTIME TRAINING PARAMETERS
+############################################################
+minRand=-0.1
+maxRand=0.1
+learningFactor=0.3
+maxIterations=500000
+errorThreshold=2.0e-4
+keepAlive=1000

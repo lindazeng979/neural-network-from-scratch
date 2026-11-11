@@ -1,0 +1,54 @@
+# THE FIRST FEW TESTS FOR A-B-C-D with backpropagation.
+# Lines are in the format key=value, where both key and value are read in as strings. Spaces are allowed in the values.
+# Keys correspond to the name of the variable they contain the value for.
+# Comments can be made using # on a different line from key=value lines.
+
+############################################################
+# NETWORK CONFIGURATION
+############################################################
+nLayers=2
+nActivations=2,1,1
+
+
+############################################################
+# INPUT AND TRUTH TABLE SETTINGS
+############################################################
+haveTruthTable=true
+                            # truthTableName takes on either "AND OR XOR" or "AND" for testing purposes
+truthTableName=XOR
+numCases=4
+printInputTable=true
+printTruthTable=true
+                            # typeInputInit takes on "loaded" or "manual"
+typeInputInit=loaded
+                            # inputSizeTest is only used if typeInputInit is "manual" and determines if number of inputs equals 2 (false) or 3 (true) 
+inputSizeTest=false
+                            # inputFileName is only used if typeInputInit is "loaded"
+inputFileName=input_table.txt
+                            # typeTruthInit takes on "loaded" or "manual"
+typeTruthInit=loaded
+                            # truthFileName is only used if typeTruthInit is "loaded"
+truthFileName=truth_table_1.txt
+
+
+############################################################
+# TRAINING AND WEIGHT PREFERENCES
+############################################################
+trainMode=true
+                            # typeWeightInit takes on "fixed", "random", or "loaded from file" as its value
+typeWeightInit=random
+weightSaving=false
+                            # These names are only used if typeWeightInit is set to "loaded from file" and/or if weightSaving is set to true
+loadFileName=2-17-3.bin
+saveFileName=2-17-3.bin
+
+
+############################################################
+# RUNTIME TRAINING PARAMETERS
+############################################################
+minRand=0.1
+maxRand=1.5
+learningFactor=0.3
+maxIterations=100000
+errorThreshold=2.0e-4
+keepAlive=0
