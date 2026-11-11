@@ -17,10 +17,15 @@ An N-layer feed-forward neural network written from scratch in Java, with no ML 
 
 For each training case:
 
-1. **Forward pass.** For each hidden and output node, compute the weighted sum θ = Σ a·w and apply the activation function f(θ).
-2. **Output error.** For each output, ω = T − a and ψ = ω · f′(θ). The case error is ½ Σ ω².
-3. **Backward pass.** Moving backward from the last hidden layer, each node's ω is the sum of ψ (from the layer above) × weight, and its own ψ = ω · f′(θ).
-4. **Weight update (steepest descent).** Each weight changes by Δw = λ · a · ψ, where λ is the `learningFactor`.
+1. **Forward pass.** For each hidden and output node, compute the weighted sum θ = Σ(a · w), where a is the activation (output) of a node in the previous layer and w is the connecting weight. Apply the activation function to get the node's output: a = f(θ).
+
+2. **Output error.** For each output node, compute the error ω = T − a, where T is the expected output and a is the predicted output. Then compute ψ = ω · f′(θ), where ψ is the error signal adjusted by the activation function's derivative. The total case error is ½ Σω².
+
+3. **Backward pass (backpropagation).** Moving backward through the hidden layers, compute each node's error ω = Σ(ψ_next · w), summing the weighted error signals from nodes in the next layer. Then compute its own ψ = ω · f′(θ).
+
+4. **Weight update (gradient descent).** Update each weight using Δw = λ · a_previous · ψ_current, where λ is the learning rate (`learningFactor`), a_previous is the activation of the sending node, and ψ_current is the error signal of the receiving node. Set w_new = w_old + Δw.
+
+**Note on standard notation:** Modern ML typically uses `z` instead of θ for weighted inputs and δ = −ψ for the error signal. Because standard notation defines the error with the opposite sign (a − T rather than T − a), gradient descent is written as subtraction: w_new = w_old − λ · a_previous · δ_current. Both conventions produce identical updates for squared-error loss.
 
 One iteration goes through every training case. The average error across cases is checked against the stopping conditions.
 
